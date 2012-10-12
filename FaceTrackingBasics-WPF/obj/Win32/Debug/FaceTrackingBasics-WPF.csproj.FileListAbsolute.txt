@@ -21,3 +21,6 @@ C:\Users\Mike\Documents\GitHub\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTracki
 C:\Users\Mike\Documents\GitHub\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics-WPF.csproj.GenerateResource.Cache
 C:\Users\Mike\Documents\GitHub\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics.exe
 C:\Users\Mike\Documents\GitHub\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics.pdb
+C:\Users\Mike\Documents\GitHub\Distracted-Driver-Detection\FaceTrackingBasics-WPF\bin\x86\Debug\FaceTrackingBasics.exe.config
+C:\Users\Mike\Documents\GitHub\Distracted-Driver-Detection\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics.exe
+C:\Users\Mike\Documents\GitHub\Distracted-Driver-Detection\FaceTrackingBasics-WPF\obj\Win32\Debug\FaceTrackingBasics.pdb
