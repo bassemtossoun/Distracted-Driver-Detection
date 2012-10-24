@@ -12,6 +12,8 @@ namespace Microsoft.Kinect.Toolkit.FaceTracking
     using System.Diagnostics;
     using System.Globalization;
     using System.Runtime.InteropServices;
+    using System.Timers;
+    using System.Threading;
 
     /// <summary>
     /// Main class that instantiates the face tracking engine and tracks the faces of a single person
@@ -642,6 +644,11 @@ namespace Microsoft.Kinect.Toolkit.FaceTracking
             Skeleton skeletonOfInterest, 
             Rect regionOfInterest)
         {
+            System.Timers.Timer myTimer = new System.Timers.Timer();
+            myTimer.Elapsed += new ElapsedEventHandler(OnTimer);
+            myTimer.Interval = 1000;
+            myTimer.Enabled = true;
+            myTimer.AutoReset = false;
             this.totalTracks++;
             this.trackStopwatch.Start();
 
@@ -726,6 +733,11 @@ namespace Microsoft.Kinect.Toolkit.FaceTracking
             if (this.frame.Rotation.Y > 45 )
             {
                 System.Diagnostics.Debug.Write("YOU'RE DISTRACTED LEFT\n");
+                /*Start Timer*/
+                while (this.frame.Rotation.Y > 45 )
+                {
+                    Thread.Sleep(1000);
+                }
             }
             else if (this.frame.Rotation.Y < -25)
             {
@@ -744,6 +756,13 @@ namespace Microsoft.Kinect.Toolkit.FaceTracking
                 System.Diagnostics.Debug.Write("YOU'RE DISTRACTED DOWN\n");
             }
             return this.frame;
+        }
+        public static void OnTimer(Object source, ElapsedEventArgs e)
+        {
+            Console.WriteLine("DateTime: " + DateTime.Now);
+            System.Timers.Timer theTimer = (System.Timers.Timer)source;
+            theTimer.Interval += 1000;
+            theTimer.Enabled = true;
         }
     }
 }
